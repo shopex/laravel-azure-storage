@@ -1,5 +1,4 @@
 # laravel-azure-storage
-[![Build Status](https://travis-ci.org/matthewbdaly/laravel-azure-storage.svg?branch=master)](https://travis-ci.org/matthewbdaly/laravel-azure-storage)
 
 Microsoft Azure Blob Storage integration for Laravel's Storage API
 
@@ -8,13 +7,13 @@ Microsoft Azure Blob Storage integration for Laravel's Storage API
 Install the package using composer:
 
 ```bash
-composer require matthewbdaly/laravel-azure-storage
+composer require shopex/laravel-azure-storage
 ```
 
-On Laravel versions before 5.5 you also need to add the service provider to `config/app.php` manually:
+On Lumen versions before 5.4 you also need to add the service provider to `bootstrap/app.php` manually:
 
 ```php
-    Matthewbdaly\LaravelAzureStorage\AzureStorageServiceProvider::class,
+    $app->register(Shopex\LaravelAzureStorage\AzureStorageServiceProvider::class);
 ```
 
 Then add this to the `disks` section of `config/filesystems.php`:
@@ -24,7 +23,10 @@ Then add this to the `disks` section of `config/filesystems.php`:
             'driver'    => 'azure',
             'name'      => env('AZURE_STORAGE_NAME'),
             'key'       => env('AZURE_STORAGE_KEY'),
-            'container' => env('AZURE_STORAGE_CONTAINER'),
+            'container' => env('AZURE_STORAGE_FILE_CONTAINER', null),
+            'prefix'    => env('AZURE_STORAGE_PREFIX', null),
+            'suffix'    => env('AZURE_STORAGE_SUFFIX', 'core.chinacloudapi.cn'),
+            'url'       => env('AZURE_STORAGE_URL', null),
         ],
 ```
 
