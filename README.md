@@ -7,13 +7,13 @@ Microsoft Azure Blob Storage integration for Laravel's Storage API
 Install the package using composer:
 
 ```bash
-composer require shopex/laravel-azure-storage
+composer require onex/laravel-azure-storage
 ```
 
 On Lumen versions before 5.4 you also need to add the service provider to `bootstrap/app.php` manually:
 
 ```php
-    $app->register(Shopex\LaravelAzureStorage\AzureStorageServiceProvider::class);
+    $app->register(Onex\LaravelAzureStorage\AzureStorageServiceProvider::class);
 ```
 
 Then add this to the `disks` section of `config/filesystems.php`:
