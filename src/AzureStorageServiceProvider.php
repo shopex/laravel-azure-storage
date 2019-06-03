@@ -1,12 +1,12 @@
 <?php
 
-namespace Shopex\LaravelAzureStorage;
+namespace Onex\LaravelAzureStorage;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
 use League\Flysystem\Filesystem;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
-use Shopex\LaravelAzureStorage\Plugins\PrivateDownloadUrl;
+use Onex\LaravelAzureStorage\Plugins\PrivateDownloadUrl;
 
 /**
  * Service provider for Azure Blob Storage

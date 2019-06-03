@@ -1,5 +1,5 @@
 {
-    "name": "shopex/laravel-azure-storage",
+    "name": "onex/laravel-azure-storage",
     "description": "Microsoft Azure Blob Storage integration for Laravel's Storage API",
     "type": "library",
     "keywords": ["storage","laravel","azure"],
@@ -22,7 +22,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Shopex\\LaravelAzureStorage\\": "src/"
+            "Onex\\LaravelAzureStorage\\": "src/"
         }
     },
     "autoload-dev": {
@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Shopex\\LaravelAzureStorage\\AzureStorageServiceProvider"
+                "Onex\\LaravelAzureStorage\\AzureStorageServiceProvider"
             ]
         }
     }

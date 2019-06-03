@@ -1,6 +1,6 @@
 <?php
 
-namespace Shopex\LaravelAzureStorage\Plugins;
+namespace Onex\LaravelAzureStorage\Plugins;
 
 use League\Flysystem\Plugin\AbstractPlugin;
 

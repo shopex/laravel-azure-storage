@@ -1,6 +1,6 @@
 <?php
 
-namespace Shopex\LaravelAzureStorage;
+namespace Onex\LaravelAzureStorage;
 
 use League\Flysystem\AzureBlobStorage\AzureBlobStorageAdapter as BaseAzureBlobStorageAdapter;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
