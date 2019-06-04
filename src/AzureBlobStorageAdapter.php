@@ -67,8 +67,37 @@ class AzureBlobStorageAdapter extends BaseAzureBlobStorageAdapter
             , $sasKey);
     }
 
+    /**
+     * Get private file download url.
+     *
+     * @param string $path
+     * @param int    $expires
+     *
+     * @return string
+     */
+    public function privateDownloadUrl($path, $expires = 3600)
+    {
+        $sas = new BlobSharedAccessSignatureHelper($this->client->getAccountName(), $this->accountKey);
+
+        $sasString = $sas->generateBlobServiceSharedAccessSignatureToken(
+            Resources::RESOURCE_TYPE_BLOB
+            , $this->container . '/' . $path
+            , 'r'
+            , $this->getTZDate($expires)
+            , ""
+            , ""
+            , 'https'
+        );
+        return $this->getUrl($path, sprintf('?%s', $sasString));
+    }
+
     public function getClient()
     {
         return $this->client;
+    }
+
+    private function getTZDate($expires) {
+        ini_set("date.timezone", "Etc/GMT");
+        return str_replace('+00:00', 'Z', gmdate('c', time() + $expires));
     }
 }

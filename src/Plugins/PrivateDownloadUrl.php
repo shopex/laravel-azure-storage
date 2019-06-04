@@ -14,6 +14,6 @@ class PrivateDownloadUrl extends AbstractPlugin
 
     public function handle($path)
     {
-        return $this->filesystem->getAdapter()->getUrl($path);
+        return $this->filesystem->getAdapter()->privateDownloadUrl($path);
     }
 }
