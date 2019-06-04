@@ -4,7 +4,7 @@ namespace Onex\LaravelAzureStorage;
 
 use League\Flysystem\AzureBlobStorage\AzureBlobStorageAdapter as BaseAzureBlobStorageAdapter;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
-use MicrosoftAzure\Storage\Blob\BlobSharedAccessSignatureHelper;
+use Onex\LaravelAzureStorage\Plugins\BlobSharedAccessSignatureHelper;
 use MicrosoftAzure\Storage\Common\Internal\Resources;
 
 class AzureBlobStorageAdapter extends BaseAzureBlobStorageAdapter
