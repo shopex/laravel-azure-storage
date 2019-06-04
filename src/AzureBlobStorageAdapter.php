@@ -53,6 +53,11 @@ class AzureBlobStorageAdapter extends BaseAzureBlobStorageAdapter
      */
     public function getUrl($path, $sasKey = '')
     {
+        $path = preg_replace_callback('#(?:(?![，。？])[\xC0-\xFF][\x80-\xBF]+)+#',function($str) {
+            if (is_array($str)) $str = implode(',', $str);
+            return urlencode($str);
+        },$path);//$content是需要处理的字符串
+
         if ( ! empty($this->baseUrl)) {
             return sprintf('%s/%s/%s%s'
                 , $this->baseUrl

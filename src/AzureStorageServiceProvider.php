@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
 use League\Flysystem\Filesystem;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
+use Onex\LaravelAzureStorage\Plugins\FileUrl;
 use Onex\LaravelAzureStorage\Plugins\PrivateDownloadUrl;
+use Onex\LaravelAzureStorage\Plugins\UploadToken;
 
 /**
  * Service provider for Azure Blob Storage
