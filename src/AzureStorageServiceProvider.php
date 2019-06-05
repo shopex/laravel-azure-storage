@@ -33,6 +33,7 @@ class AzureStorageServiceProvider extends ServiceProvider
             $adapter = new AzureBlobStorageAdapter($client, $config['container'], $config['prefix'], $config['key'], $config['url']);
             $flysystem = new Filesystem($adapter);
             $flysystem->addPlugin(new PrivateDownloadUrl());
+            $flysystem->addPlugin(new UploadToken());
             return $flysystem;
         });
     }
